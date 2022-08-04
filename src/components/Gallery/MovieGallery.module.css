@@ -1,0 +1,20 @@
+.galleryList {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2vw;
+  font-size: 5vw;
+  padding: 0.5em;
+  font-size: 16px;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+.galleryItem:hover {
+  -webkit-transform: scale(1.03);
+  -ms-transform: scale(1.03);
+  transform: scale(1.03);
+}
