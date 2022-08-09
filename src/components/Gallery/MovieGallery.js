@@ -11,7 +11,11 @@ export default function MovieGallery({ movies }) {
         {movies &&
           movies.map(({ title, id, poster_path }) => (
             <li className={css.galleryItem} key={id}>
-              <Link to={`/movies/${id}`} state={{ from: location }}>
+              <Link
+                to={`/movies/${id}`}
+                state={{ from: location }}
+                className={css.movieName}
+              >
                 <img
                   src={`https://image.tmdb.org/t/p/w500${poster_path}`}
                   alt={title}

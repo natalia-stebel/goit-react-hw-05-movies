@@ -1,5 +1,6 @@
 import { useSearchParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import css from './SearchBar.module.css';
 
 export default function SearchBar({ onSubmit }) {
   const [searchQuery, setSearchQuery] = useSearchParams();
@@ -8,6 +9,8 @@ export default function SearchBar({ onSubmit }) {
   const handleInputChange = e => {
     if (e.currentTarget.value.toLowerCase() !== searchQuery)
       setSearchQuery({ query: e.currentTarget.value.toLowerCase() });
+    console.log(searchQuery);
+    console.log(searchValue);
   };
 
   const handleSubmit = e => {
@@ -16,14 +19,15 @@ export default function SearchBar({ onSubmit }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={css.form} onSubmit={handleSubmit}>
       <input
-        value={searchQuery}
+        className={css.input}
+        value={searchValue}
         name="query"
         onChange={handleInputChange}
         type="text"
       />
-      <button type="button" onClick={handleSubmit}>
+      <button className={css.button} type="button" onClick={handleSubmit}>
         Search
       </button>
     </form>

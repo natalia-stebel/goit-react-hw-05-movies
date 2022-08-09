@@ -7,7 +7,7 @@ import { movieDetails } from '../services/api';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import ButtonGoBack from '../views/ButtonGoBack';
+import ButtonGoBack from './../GoBackButton/ButtonGoBack';
 
 // const Cast = lazy(() =>
 //   import('./Cast').then(module => ({ default: module.Cast }))

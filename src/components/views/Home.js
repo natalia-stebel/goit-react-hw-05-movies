@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import MovieGallery from '../Gallery/MovieGallery';
 import { Status } from './status';
+import css from './styles.module.css';
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
@@ -32,7 +33,7 @@ export default function Home() {
   if (status === Status.RESOLVED) {
     return (
       <div>
-        <h2>Trending today</h2>
+        <h2 className={css.titleHome}>Trending today</h2>
 
         {movies && <MovieGallery movies={movies} />}
       </div>
