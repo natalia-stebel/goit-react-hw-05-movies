@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
-export const POSTER_URL = 'https://image.tmdb.org/t/p/w500';
+// export const POSTER_URL = 'https://image.tmdb.org/t/p/w500';
 const API_KEY = 'a2d752373b5fc20ba7d7c26c66d25d31';
 
 // async function fetchWithErrorHandling(url = '', config = {}) {
@@ -30,12 +30,13 @@ export const movieDetails = async movieId => {
   return response.data;
 };
 
-export const movieCast = async movieId => {
-  const response = await axios.get(
-    `/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`
+export async function movieCast(movieId) {
+  const BASE_URL = 'https://api.themoviedb.org/3/movie/';
+  const API_KEY = 'api_key=a2d752373b5fc20ba7d7c26c66d25d31';
+  return await axios.get(
+    `${BASE_URL}${movieId}/credits?${API_KEY}&language=en-US`
   );
-  return response.data;
-};
+}
 
 export const movieReview = async movieId => {
   const response = await axios.get(
